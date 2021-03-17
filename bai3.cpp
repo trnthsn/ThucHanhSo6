@@ -5,7 +5,6 @@ using namespace std;
 
 vector<int> customer;
 
-
 void get()
 {
 	int n;
