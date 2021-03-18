@@ -9,16 +9,6 @@ int ucln(int a, int b)
         return ucln(b, a % b);
 }
 
-bool check(int a[], int b, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] % b)
-            return false;
-    }
-    return true;
-}
-
 void write(int *a, int n)
 {
     for (int i = 0; i < n; i++)
@@ -55,7 +45,7 @@ int main()
     // check các số thoả mãn yêu cầu đề bài
     for (int i = bcnn1; i <= ucln1; i++)
     {
-    	if (check(b, i, n))
+    	if (i % bcnn1 == 0 && ucln1 % i == 0)
     	{
     		count++;
     	}
