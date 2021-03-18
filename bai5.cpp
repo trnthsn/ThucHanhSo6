@@ -40,6 +40,7 @@ string combineWordsFromFile(const char fileName[])
         }
     }
     return s;
+    // check git
 }
 
 int main()
