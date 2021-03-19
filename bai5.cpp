@@ -4,17 +4,9 @@
 #include <fstream>
 using namespace std;
 
-vector<string> words;
-struct comp
-{
-    bool operator()(string const &i, string const &j) const
-    {
-        return i > j;
-    }
-};
-
 string combineWordsFromFile(const char fileName[])
 {
+    vector<string> words;
     ifstream file;
     file.open(fileName);
     if (file.is_open())
@@ -26,22 +18,17 @@ string combineWordsFromFile(const char fileName[])
         }
     }
     string s;
-    sort(words.begin(), words.end(), comp());
-    for (int i = 0; i < words.size(); i++)
+    sort(words.begin(), words.end());
+    for (int i = words.size() - 1; i >= 0; i--)
     {
-        if (i == words.size() - 1)
-        {
-            s += words[i];
-        }
-        else
-        {
-            s += words[i];
+        s += words[i];
+        if (i)
             s += " ";
-        }
     }
     return s;
-    // check git
 }
+/*
+
 
 int main()
 {
@@ -50,3 +37,4 @@ int main()
     cout << combined << endl;
     cout << boolalpha << ("this test is a" == combined);
 }
+*/
